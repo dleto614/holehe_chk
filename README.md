@@ -10,7 +10,7 @@ I have edited this script to be a bit more robust and more efficient. It still s
 
 I just did:
 
-```python3
+```bash
 git clone https://github.com/dleto614/holehe_chk && cd holehe_chk
 python3 -m venv venv
 source venv/bin/activate
@@ -21,11 +21,11 @@ pip3 install argparse trio httpx holehe
 
 ## Usage:
 
-```python3
+```bash
 python3 main.py --input emails.txt --output test-socials-emails.json
 ```
 
-```python3
+```bash
 python3 main.py --email youremail@example.com --output test-socials-email.json
 ```
 
@@ -35,7 +35,7 @@ Can omit the `--output` flag.
 
 ##### Help:
 
-```
+```bash
 $ python3 main.py -h
 usage: main.py [-h] [--email EMAIL] [--input INPUT] [--output OUTPUT]
                [--sites SITES] [--list-sites] [--verbose] [--log] [--debug]
