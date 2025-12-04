@@ -2,6 +2,8 @@
 
 A really badly coded holehe script that allows me to give file input for emails or email as standalone and output to file in json format.
 
+I have edited this script to be a bit more robust and more efficient. It still sucks.
+
 ----
 
 ## Install:
@@ -11,7 +13,8 @@ I just did:
 ```python3
 git clone https://github.com/dleto614/holehe_chk && cd holehe_chk
 python3 -m venv venv
-venv/bin/pip3 install argparse trio httpx holehe
+source venv/bin/activate
+pip3 install argparse trio httpx holehe
 ```
 
 -------
@@ -19,11 +22,11 @@ venv/bin/pip3 install argparse trio httpx holehe
 ## Usage:
 
 ```python3
-venv/bin/python3 main.py --input emails.txt --output test-usernames.json
+python3 main.py --input emails.txt --output test-socials-emails.json
 ```
 
 ```python3
-venv/bin/python3 main.py --email youremail@example.com --output test-usernames.json
+python3 main.py --email youremail@example.com --output test-socials-email.json
 ```
 
 Can omit the `--output` flag.
@@ -33,17 +36,26 @@ Can omit the `--output` flag.
 ##### Help:
 
 ```python3
-$ venv/bin/python3 main.py 
+$ python3 main.py -h
 usage: main.py [-h] [--email EMAIL] [--input INPUT] [--output OUTPUT]
+               [--sites SITES] [--list-sites] [--verbose] [--log] [--debug]
+               [--log-file LOG_FILE]
+               [--log-level {debug,info,warning,error,critical}]
 
-Simple python3 program to check if an email is associated with any of the import online account modules.
+Check if an email is associated with various online accounts.
 
 options:
   -h, --help            show this help message and exit
-  --email EMAIL, -e EMAIL
-                        Email to check.
-  --input INPUT, -i INPUT
-                        File with emails one on each line.
-  --output OUTPUT, -o OUTPUT
-                        Specify a file to save results to.
+  --email, -e EMAIL     Email to check.
+  --input, -i INPUT     File with emails (one per line).
+  --output, -o OUTPUT   File to save results to (JSON format).
+  --sites, -s SITES     Comma-separated list of sites to check.
+  --list-sites, -l      List all available sites and exit.
+  --verbose, -v         Show verbose output (number of sites being checked).
+  --log                 Set logging or not.
+  --debug, -d           Set debug.
+  --log-file LOG_FILE   Path to log file for internal debugging.
+  --log-level {debug,info,warning,error,critical}
+                        Set logging level for console/file output (default:
+                        warning).
 ```
