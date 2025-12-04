@@ -35,7 +35,7 @@ Can omit the `--output` flag.
 
 ##### Help:
 
-```python3
+```
 $ python3 main.py -h
 usage: main.py [-h] [--email EMAIL] [--input INPUT] [--output OUTPUT]
                [--sites SITES] [--list-sites] [--verbose] [--log] [--debug]
